@@ -1,0 +1,52 @@
+version: '2'
+
+catalog:
+
+    name: lancache-fullstack
+    version: 1.0.
+    description: "Full LAN Caching stack for Blizzard, Frontier, Origin, Riot, Steam, Uplay and Windows Updates"
+    questions:
+        - variable: "LANCACHE_IP"
+          label: Cache IP Address
+          default: 10.0.0.1
+          required: true
+          type: string
+        - variable: "STEAMCACHE_CONTAINER"
+          label: Steam Caching container type
+          default: steamcache
+          required: true
+          type: enum
+          options:
+            - steamcache
+            - generic
+        - variable: "CACHE_ROOT"
+          label: Cache directory (This should be available on ALL hosts that the caching servers will be running on.
+          required: true
+          type: string
+        - variable: "UPSTREAM_DNS"
+          label: Upstream DNS Server
+          required: true
+          type: string
+          default: 8.8.8.8
+services:
+  dns:
+    scale: 1
+    start_on_create: true
+
+  sniproxy:
+    scale: 1
+    start_on_create: true
+  lb:
+    scale: 1
+    start_on_create: true
+    health_check:
+      response_timeout: 2000
+      healthy_threshold: 2
+      port: 42
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      reinitializing_timeout: 60000
+    lb_config:
+      certs: []
+      port_rules:
