@@ -75,6 +75,11 @@ services:
     volumes:
       - ${CACHE_ROOT}/origin/cache:/data/cache
       - ${CACHE_ROOT}/origin/logs:/data/logs
+  renegadex:
+    image: steamcache/generic:latest
+    volumes:
+      - ${CACHE_ROOT}/renegadex/cache:/data/cache
+      - ${CACHE_ROOT}/renegadex/logs:/data/logs
   riot:
     image: steamcache/generic:latest
     volumes:

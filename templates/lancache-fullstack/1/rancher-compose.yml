@@ -3,7 +3,7 @@ version: '2'
 catalog:
 
     name: lancache-fullstack
-    version: 1.0.0
+    version: 1.0.1
     description: "Full LAN Caching stack for Blizzard, Frontier, Origin, Riot, Steam, Uplay and Windows Updates"
     questions:
         - variable: "LANCACHE_IP"
@@ -362,6 +362,102 @@ services:
         service: origin
         source_port: 80
         target_port: 80
+      - hostname: 'rxp-fl.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-chi.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-nz.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-bgr.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-fr.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-nyc.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-uk.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-sg.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-la.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'rxp-fin.cncirc.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'denver1.renegade-x.com'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
+      - hostname: 'seattle1.renegade-x.com'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: renegadex
+        source_port: 80
+        target_port: 80
       - hostname: 'l3cdn.riotgames.com'
         path: ''
         access: public
@@ -634,6 +730,22 @@ services:
         service: steam
         source_port: 80
         target_port: 80
+      - hostname: 'edge.steam-dns-2.top.comcast.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: steam
+        source_port: 80
+        target_port: 80
+      - hostname: 'steamcdn-a.akamaihd.net'
+        path: ''
+        access: public
+        priority: 1
+        protocol: http
+        service: steam
+        source_port: 80
+        target_port: 80
       - hostname: '*.cdn.ubi.com'
         path: ''
         access: public
@@ -865,6 +977,9 @@ services:
     scale: 1
     start_on_create: true
   origin:
+    scale: 1
+    start_on_create: true
+  renegadex:
     scale: 1
     start_on_create: true
   riot:
