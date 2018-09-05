@@ -35,6 +35,10 @@ cat services.json | jq -r '.cache_domains[] | .name, .domain_files[]' | while re
         echo "    volumes:" >> ${DOCKERFILE}
         echo "      - \${CACHE_ROOT}/${SERVICE}/cache:/data/cache" >> ${DOCKERFILE}
         echo "      - \${CACHE_ROOT}/${SERVICE}/logs:/data/logs" >> ${DOCKERFILE}
+        echo "    environment:" >> ${DOCKERFILE}
+        echo "      CACHE_DISK_SIZE: \${CACHE_DISK_SIZE}m" >> ${DOCKERFILE}
+        echo "      CACHE_MEM_SIZE: \${CACHE_MEM_SIZE}m" >> ${DOCKERFILE}
+        echo "      CACHE_MAX_AGE: \${CACHE_MAX_AGE}d" >> ${DOCKERFILE}
 
         echo "  ${SERVICE}:" >> ${SERVICES}
         echo "    scale: 1" >> ${SERVICES}

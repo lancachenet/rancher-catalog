@@ -19,15 +19,28 @@ catalog:
           options:
             - steamcache
             - generic
-        - variable: "CACHE_ROOT"
-          label: Cache directory (This should be available on ALL hosts that the caching servers will be running on.
-          required: true
-          type: string
         - variable: "UPSTREAM_DNS"
           label: Upstream DNS Server
           required: true
           type: string
           default: 8.8.8.8
+        - variable: "CACHE_DISK_SIZE"
+          label: Available Disk space for cache in megabytes (each cache will get the same amount of space)
+          required: true
+          default: 500000
+        - variable: "CACHE_MEM_SIZE"
+          label: Amount of memory for each cache to use in megabytes
+          required: true
+          default: 500
+        - variable: "CACHE_MAX_AGE"
+          label: maximum age of cache files in days
+          required: true
+          default: 3560
+        - variable: "CACHE_ROOT"
+          label: Cache directory (This should be available on ALL hosts that the caching servers will be running on.
+          required: true
+          type: string
+          default: "/lancache"
 services:
   dns:
     scale: 1
