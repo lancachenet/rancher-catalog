@@ -1,0 +1,10 @@
+version: '2'
+services:
+  dns:
+    image: steamcache/steamcache-dns:latest
+    ports:
+      - 53:53/udp
+    environment:
+      USE_GENERIC_CACHE: true
+      LANCACHE_IP: ${LANCACHE_IP}
+      UPSTREAM_DNS: ${UPSTREAM_DNS}

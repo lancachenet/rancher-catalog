@@ -1,0 +1,20 @@
+version: '2'
+catalog:
+  name: lancache-dns
+  version: 1.0.0
+  description: "This docker container provides DNS entries for caching services to be used in conjunction with a steamcache/steamcache & steamcache/generic server"
+  questions:
+    - variable: "LANCACHE_IP"
+      label: Cache IP Address
+      default: 10.0.0.1
+      required: true
+      type: string
+    - variable: "UPSTREAM_DNS"
+      label: Upstream DNS Server
+      required: true
+      type: string
+      default: 8.8.8.8
+services:
+  dns:
+    scale: 1
+    start_on_create: true
