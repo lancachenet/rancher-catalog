@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: lancache-dns
-  version: 1.0.00
+  version: 1.0.0
   description: "This docker container provides DNS entries for caching services to be used in conjunction with a steamcache/steamcache & steamcache/generic server"
   questions:
     - variable: "DISABLE_APPLE"
@@ -9,7 +9,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "APPLE_IP"
+    - variable: "APPLECACHE_IP"
       label: apple Cache IP Address
       default: 10.0.0.1
       required: false
@@ -19,7 +19,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "ARENANET_IP"
+    - variable: "ARENANETCACHE_IP"
       label: arenanet Cache IP Address
       default: 10.0.0.1
       required: false
@@ -29,7 +29,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "BLIZZARD_IP"
+    - variable: "BLIZZARDCACHE_IP"
       label: blizzard Cache IP Address
       default: 10.0.0.1
       required: false
@@ -39,7 +39,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "DAYBREAK_IP"
+    - variable: "DAYBREAKCACHE_IP"
       label: daybreak Cache IP Address
       default: 10.0.0.1
       required: false
@@ -49,7 +49,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "FRONTIER_IP"
+    - variable: "FRONTIERCACHE_IP"
       label: frontier Cache IP Address
       default: 10.0.0.1
       required: false
@@ -59,7 +59,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "HIREZ_IP"
+    - variable: "HIREZCACHE_IP"
       label: hirez Cache IP Address
       default: 10.0.0.1
       required: false
@@ -69,7 +69,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "MINECRAFT_IP"
+    - variable: "MINECRAFTCACHE_IP"
       label: minecraft Cache IP Address
       default: 10.0.0.1
       required: false
@@ -79,7 +79,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "NEXUSMODS_IP"
+    - variable: "NEXUSMODSCACHE_IP"
       label: nexusmods Cache IP Address
       default: 10.0.0.1
       required: false
@@ -89,7 +89,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "NINTENDO_IP"
+    - variable: "NINTENDOCACHE_IP"
       label: nintendo Cache IP Address
       default: 10.0.0.1
       required: false
@@ -99,7 +99,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "ORIGIN_IP"
+    - variable: "ORIGINCACHE_IP"
       label: origin Cache IP Address
       default: 10.0.0.1
       required: false
@@ -109,7 +109,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "RENEGADEX_IP"
+    - variable: "RENEGADEXCACHE_IP"
       label: renegadex Cache IP Address
       default: 10.0.0.1
       required: false
@@ -119,7 +119,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "RIOT_IP"
+    - variable: "RIOTCACHE_IP"
       label: riot Cache IP Address
       default: 10.0.0.1
       required: false
@@ -129,7 +129,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "ROCKSTAR_IP"
+    - variable: "ROCKSTARCACHE_IP"
       label: rockstar Cache IP Address
       default: 10.0.0.1
       required: false
@@ -139,7 +139,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "SONY_IP"
+    - variable: "SONYCACHE_IP"
       label: sony Cache IP Address
       default: 10.0.0.1
       required: false
@@ -149,7 +149,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "STEAM_IP"
+    - variable: "STEAMCACHE_IP"
       label: steam Cache IP Address
       default: 10.0.0.1
       required: false
@@ -159,7 +159,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "UPLAY_IP"
+    - variable: "UPLAYCACHE_IP"
       label: uplay Cache IP Address
       default: 10.0.0.1
       required: false
@@ -169,7 +169,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "TWITCH_IP"
+    - variable: "TWITCHCACHE_IP"
       label: twitch Cache IP Address
       default: 10.0.0.1
       required: false
@@ -179,7 +179,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "WARGAMING_IP"
+    - variable: "WARGAMINGCACHE_IP"
       label: wargaming Cache IP Address
       default: 10.0.0.1
       required: false
@@ -189,7 +189,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "WSUS_IP"
+    - variable: "WSUSCACHE_IP"
       label: wsus Cache IP Address
       default: 10.0.0.1
       required: false
@@ -199,7 +199,7 @@ catalog:
       default: true
       required: true
       type: boolean
-    - variable: "XBOXLIVE_IP"
+    - variable: "XBOXLIVECACHE_IP"
       label: xboxlive Cache IP Address
       default: 10.0.0.1
       required: false

@@ -1,0 +1,42 @@
+version: '2'
+
+catalog:
+    name: lancache-generic
+    version: 1.0.0
+    description: "This docker container provides a caching proxy server for game download content. For any network with more than one PC gamer in connected this will drastically reduce internet bandwidth consumption."
+    questions:
+        - variable: "CACHE_IP"
+          label: Cache IP Address
+          default: 10.0.0.1
+          required: true
+          type: string
+        - variable: "CONTAINER_TYPE"
+          label: Container type
+          default: generic
+          required: true
+          type: enum
+          options:
+            - steamcache
+            - generic
+        - variable: "CACHE_ROOT"
+          label: Cache directory (This should be available on ALL hosts that the caching servers will be running on.
+          required: true
+          type: string
+          default: "/data/steam"
+        - variable: "CACHE_DISK_SIZE"
+          label: Available Disk space for cache in megabytes
+          required: true
+          default: 500000
+        - variable: "CACHE_MEM_SIZE"
+          label: Amount of memory for cache to use in megabytes
+          required: true
+          default: 500
+        - variable: "CACHE_MAX_AGE"
+          label: maximum age of cache files in days
+          required: true
+          default: 3650
+services:
+    cache:
+        scale: 1
+        start_on_create: true
+

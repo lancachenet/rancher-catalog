@@ -105,15 +105,15 @@ function build_dns() {
 			SERVICE=${L}
 	        echo "${SERVICE}"
 		    
-	        echo "      ${SERVICE^^}_IP: \${SERVICE_IP}" >> ${DOCKERFILE}
-	        echo "      DISABLE_${SERVICE^^}: \${DISABLE_SERVICE}" >> ${DOCKERFILE}
+	        echo "      ${SERVICE^^}CACHE_IP: \${${SERVICE^^}CACHE_IP}" >> ${DOCKERFILE}
+	        echo "      DISABLE_${SERVICE^^}: \${DISABLE_${SERVICE^^}}" >> ${DOCKERFILE}
 	    
 	        echo "    - variable: \"DISABLE_${SERVICE^^}\"" >> ${RANCHERFILE}
 	        echo "      label: Disable ${SERVICE} DNS" >> ${RANCHERFILE}
 			echo "      default: true" >> ${RANCHERFILE}
 	        echo "      required: true" >> ${RANCHERFILE}
 	        echo "      type: boolean" >> ${RANCHERFILE}
-	        echo "    - variable: \"${SERVICE^^}_IP\"" >> ${RANCHERFILE}
+	        echo "    - variable: \"${SERVICE^^}CACHE_IP\"" >> ${RANCHERFILE}
 	        echo "      label: ${SERVICE} Cache IP Address" >> ${RANCHERFILE}
 			echo "      default: 10.0.0.1" >> ${RANCHERFILE}
 	        echo "      required: false" >> ${RANCHERFILE}
