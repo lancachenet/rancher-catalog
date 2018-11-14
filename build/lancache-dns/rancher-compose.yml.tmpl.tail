@@ -1,0 +1,19 @@
+    - variable: "USE_GENERIC_CACHE"
+      label: Use Generic Cache with Load Balancer
+      required: true
+      type: boolean
+      default: false
+    - variable: "LANCACHE_IP"
+      label: IP of Generic Cache Load Balancer
+      required: false
+      type: string
+      default: ""
+    - variable: "UPSTREAM_DNS"
+      label: Upstream DNS Server
+      required: true
+      type: string
+      default: 8.8.8.8
+services:
+  dns:
+    scale: 1
+    start_on_create: true

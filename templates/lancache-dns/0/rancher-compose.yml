@@ -1,14 +1,219 @@
 version: '2'
 catalog:
   name: lancache-dns
-  version: 1.0.0
+  version: 1.0.00
   description: "This docker container provides DNS entries for caching services to be used in conjunction with a steamcache/steamcache & steamcache/generic server"
   questions:
-    - variable: "LANCACHE_IP"
-      label: Cache IP Address
-      default: 10.0.0.1
+    - variable: "DISABLE_APPLE"
+      label: Disable apple DNS
+      default: true
       required: true
+      type: boolean
+    - variable: "APPLE_IP"
+      label: apple Cache IP Address
+      default: 10.0.0.1
+      required: false
       type: string
+    - variable: "DISABLE_ARENANET"
+      label: Disable arenanet DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "ARENANET_IP"
+      label: arenanet Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_BLIZZARD"
+      label: Disable blizzard DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "BLIZZARD_IP"
+      label: blizzard Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_DAYBREAK"
+      label: Disable daybreak DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "DAYBREAK_IP"
+      label: daybreak Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_FRONTIER"
+      label: Disable frontier DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "FRONTIER_IP"
+      label: frontier Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_HIREZ"
+      label: Disable hirez DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "HIREZ_IP"
+      label: hirez Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_MINECRAFT"
+      label: Disable minecraft DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "MINECRAFT_IP"
+      label: minecraft Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_NEXUSMODS"
+      label: Disable nexusmods DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "NEXUSMODS_IP"
+      label: nexusmods Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_NINTENDO"
+      label: Disable nintendo DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "NINTENDO_IP"
+      label: nintendo Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_ORIGIN"
+      label: Disable origin DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "ORIGIN_IP"
+      label: origin Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_RENEGADEX"
+      label: Disable renegadex DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "RENEGADEX_IP"
+      label: renegadex Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_RIOT"
+      label: Disable riot DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "RIOT_IP"
+      label: riot Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_ROCKSTAR"
+      label: Disable rockstar DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "ROCKSTAR_IP"
+      label: rockstar Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_SONY"
+      label: Disable sony DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "SONY_IP"
+      label: sony Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_STEAM"
+      label: Disable steam DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "STEAM_IP"
+      label: steam Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_UPLAY"
+      label: Disable uplay DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "UPLAY_IP"
+      label: uplay Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_TWITCH"
+      label: Disable twitch DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "TWITCH_IP"
+      label: twitch Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_WARGAMING"
+      label: Disable wargaming DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "WARGAMING_IP"
+      label: wargaming Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_WSUS"
+      label: Disable wsus DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "WSUS_IP"
+      label: wsus Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_XBOXLIVE"
+      label: Disable xboxlive DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "XBOXLIVE_IP"
+      label: xboxlive Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "USE_GENERIC_CACHE"
+      label: Use Generic Cache with Load Balancer
+      required: true
+      type: boolean
+      default: false
+    - variable: "LANCACHE_IP"
+      label: IP of Generic Cache Load Balancer
+      required: false
+      type: string
+      default: ""
     - variable: "UPSTREAM_DNS"
       label: Upstream DNS Server
       required: true
