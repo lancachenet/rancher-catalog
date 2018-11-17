@@ -1,0 +1,225 @@
+version: '2'
+catalog:
+  name: lancache-dns
+  version: 1.0.0
+  description: "This docker container provides DNS entries for caching services to be used in conjunction with a steamcache/steamcache & steamcache/generic server"
+  questions:
+    - variable: "DISABLE_APPLE"
+      label: Disable apple DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "APPLECACHE_IP"
+      label: apple Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_ARENANET"
+      label: Disable arenanet DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "ARENANETCACHE_IP"
+      label: arenanet Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_BLIZZARD"
+      label: Disable blizzard DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "BLIZZARDCACHE_IP"
+      label: blizzard Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_DAYBREAK"
+      label: Disable daybreak DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "DAYBREAKCACHE_IP"
+      label: daybreak Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_FRONTIER"
+      label: Disable frontier DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "FRONTIERCACHE_IP"
+      label: frontier Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_HIREZ"
+      label: Disable hirez DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "HIREZCACHE_IP"
+      label: hirez Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_MINECRAFT"
+      label: Disable minecraft DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "MINECRAFTCACHE_IP"
+      label: minecraft Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_NEXUSMODS"
+      label: Disable nexusmods DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "NEXUSMODSCACHE_IP"
+      label: nexusmods Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_NINTENDO"
+      label: Disable nintendo DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "NINTENDOCACHE_IP"
+      label: nintendo Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_ORIGIN"
+      label: Disable origin DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "ORIGINCACHE_IP"
+      label: origin Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_RENEGADEX"
+      label: Disable renegadex DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "RENEGADEXCACHE_IP"
+      label: renegadex Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_RIOT"
+      label: Disable riot DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "RIOTCACHE_IP"
+      label: riot Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_ROCKSTAR"
+      label: Disable rockstar DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "ROCKSTARCACHE_IP"
+      label: rockstar Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_SONY"
+      label: Disable sony DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "SONYCACHE_IP"
+      label: sony Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_STEAM"
+      label: Disable steam DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "STEAMCACHE_IP"
+      label: steam Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_UPLAY"
+      label: Disable uplay DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "UPLAYCACHE_IP"
+      label: uplay Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_TWITCH"
+      label: Disable twitch DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "TWITCHCACHE_IP"
+      label: twitch Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_WARGAMING"
+      label: Disable wargaming DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "WARGAMINGCACHE_IP"
+      label: wargaming Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_WSUS"
+      label: Disable wsus DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "WSUSCACHE_IP"
+      label: wsus Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "DISABLE_XBOXLIVE"
+      label: Disable xboxlive DNS
+      default: true
+      required: true
+      type: boolean
+    - variable: "XBOXLIVECACHE_IP"
+      label: xboxlive Cache IP Address
+      default: 10.0.0.1
+      required: false
+      type: string
+    - variable: "USE_GENERIC_CACHE"
+      label: Use Generic Cache with Load Balancer
+      required: true
+      type: boolean
+      default: false
+    - variable: "LANCACHE_IP"
+      label: IP of Generic Cache Load Balancer
+      required: false
+      type: string
+      default: ""
+    - variable: "UPSTREAM_DNS"
+      label: Upstream DNS Server
+      required: true
+      type: string
+      default: 8.8.8.8
+services:
+  dns:
+    scale: 1
+    start_on_create: true

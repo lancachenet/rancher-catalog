@@ -1,0 +1,13 @@
+version: '2'
+services:
+  cache:
+    image: steamcache/${CONTAINER_TYPE}:latest
+    volumes:
+      - ${CACHE_ROOT}/cache:/data/cache
+      - ${CACHE_ROOT}/logs:/data/logs
+    ports:
+      - ${CACHE_IP}:80:80
+    environment:
+      CACHE_DISK_SIZE: ${CACHE_DISK_SIZE}m
+      CACHE_MEM_SIZE: ${CACHE_MEM_SIZE}m
+      CACHE_MAX_AGE: ${CACHE_MAX_AGE}d
