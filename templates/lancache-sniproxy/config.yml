@@ -1,9 +1,0 @@
-name: lancache-sniproxy
-description: |
-      This docker container provides a sni proxy server to bypass uncachable https proxy on a caching server using dns redirect. 
-version: v1.0
-category: Caching
-maintainer: Jessica Smith, Robin Lewis, Brian Wojtczak, Jason Rivers
-license: MIT License
-projectURL: "https://steamcache.net"
-

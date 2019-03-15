@@ -1,9 +1,0 @@
-version: '2'
-catalog:
-    name: lancache-sniproxy
-    version: 1.0.0
-    description: "This docker container provides a sni proxy server to bypass uncachable https proxy on a caching server using dns redirect."
-services:
-  sniproxy:
-    scale: 1
-    start_on_create: true

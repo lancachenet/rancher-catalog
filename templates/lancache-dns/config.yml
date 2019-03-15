@@ -1,8 +1,0 @@
-name: lancache-dns
-description: "This docker container provides DNS entries for caching services to be used in conjunction with a steamcache/steamcache & steamcache/generic server."
-version: v1.0
-category: Caching
-maintainer: Jessica Smith, Robin Lewis, Brian Wojtczak, Jason Rivers
-license: MIT License
-projectURL: "https://steamcache.net"
-
