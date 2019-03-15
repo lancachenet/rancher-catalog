@@ -3,7 +3,7 @@ version: '2'
 catalog:
 
     name: lancache-fullstack
-    version: 1.0.5
+    version: 1.0.0
     description: "Full LAN Caching stack for Blizzard, Frontier, Origin, Riot, Steam, Uplay and Windows Updates"
     questions:
         - variable: "LANCACHE_IP"
