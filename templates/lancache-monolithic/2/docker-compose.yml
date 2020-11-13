@@ -1,0 +1,23 @@
+version: '2'
+services:
+  dns:
+    image: lancachenet/lancache-dns:latest
+    ports:
+      - 53:53/udp
+    environment:
+      USE_GENERIC_CACHE: true
+      LANCACHE_IP: ${LANCACHE_IP}
+      UPSTREAM_DNS: ${UPSTREAM_DNS}
+  caching:
+    image: lancachenet/monolithic:latest
+    ports:
+        - 80:80/tcp
+	- 443:443/tcp
+    volumes:
+      - ${CACHE_ROOT}/data:/data/cache
+      - ${CACHE_ROOT}/logs:/data/logs
+    environment:
+      CACHE_DISK_SIZE: ${CACHE_DISK_SIZE}m
+      CACHE_MEM_SIZE: ${CACHE_MEM_SIZE}m
+      CACHE_MAX_AGE: ${CACHE_MAX_AGE}d
+      UPSTREAM_DNS: ${UPSTREAM_DNS}
