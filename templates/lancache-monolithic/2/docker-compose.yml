@@ -12,7 +12,7 @@ services:
     image: lancachenet/monolithic:latest
     ports:
         - 80:80/tcp
-	- 443:443/tcp
+        - 443:443/tcp
     volumes:
       - ${CACHE_ROOT}/data:/data/cache
       - ${CACHE_ROOT}/logs:/data/logs
